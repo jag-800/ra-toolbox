@@ -1,0 +1,29 @@
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #FFFFFE;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-floating m-5 mt-3">
+    <h1>ホーム</h1>
+
+    <div class="card p-3">
+      <h2><%= link_to 'URLメモ帳', '/todos' %></h2>
+      <p>授業の動画URLやメモ、キープしたいコードを保存しておくのに活用</p>
+      <h2><%= link_to '字数カウント', '/todos/text' %></h2>
+      <p>レポートの字数だけでなく、英作文の語数に活用</p>
+      <h2><%= link_to '翻訳', '/todos/translate' %></h2>
+      <p>DeepLの精度、英文の翻訳や韓国語の翻訳に活用<br>※今後、他の候補の翻訳結果も表示されるように改良が必要(API部分でエラー)</p>
+    </div>
+
+
+
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>

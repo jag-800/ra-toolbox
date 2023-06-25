@@ -1,0 +1,60 @@
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+  body {
+      background-color: #FFFFFE;
+  }
+  .card {
+    min-width: 400px;
+    min-height: 450px;
+    max-width: 800px;
+  }
+  .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+  }
+  .card-buttons {
+      margin-top: auto;
+  }
+</style>
+</head>
+
+<body>
+
+  <div class="form-floating m-5 mt-3">
+    <h1>新規登録ページ</h1>
+    <div class="row">
+      <div class="">
+        <div class="card shadow-sm p-3 mb-5 bg-body rounded">
+          <div class="card-body">
+            <%= form_with(model: @todo, url: todos_path) do |form| %>
+              <%= form.label :title, "タイトル" %><br>
+              <%= form.text_field :title %>
+              <br>
+              <%= form.label :category, "カテゴリー" %><br>
+              <%= form.text_field :category %>
+              <br>
+              <%= form.label :description, "詳しい内容" %><br>
+              <%= form.text_area :description, rows: 5, cols: 60 %>
+              <br><br>
+
+
+
+              <div class="card-buttons">
+                <%= form.submit '登録する', class: 'btn btn-default btn-primary text-white' %>
+              </div>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= link_to '戻る', todos_path %>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>

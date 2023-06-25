@@ -1,0 +1,92 @@
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<meta name="csrf-token" content="<%= form_authenticity_token %>">
+<style>
+  body {
+      background-color: #FFFFFE;
+  }
+</style>
+</head>
+
+
+<body>
+  <%= form_with url: '/todos/translation', id: 'translationForm' do |form| %>
+    <div class="form-floating mt-3 m-3">
+      <h1>DeepLのAPIをつかって翻訳ツールを作る</h1>
+    </div>
+
+    <h1 class="mt-3 m-3">翻訳アプリ</h1>
+
+    <div class="mt-3 m-5">
+      <div class="d-flex justify-content">
+        <select id="targetLanguage" class="form-select w-25">
+          <option value="en">英語</option>
+          <option value="ja">日本語</option>
+          <option value="bg">ブルガリア語</option>
+          <option value="cs">チェコ語</option>
+          <option value="da">デンマーク語</option>
+          <option value="de">ドイツ語</option>
+          <option value="el">ギリシャ語</option>
+          <option value="es">スペイン語</option>
+          <option value="et">エストニア語</option>
+          <option value="fi">フィンランド語</option>
+          <option value="fr">フランス語</option>
+          <option value="hu">ハンガリー語</option>
+          <option value="id">インドネシア語</option>
+          <option value="it">イタリア語</option>
+          <option value="ko">韓国語</option>
+          <option value="lt">リトアニア語</option>
+          <option value="lv">ラトビア語</option>
+          <option value="nb">ノルウェー語（ブークモール）</option>
+          <option value="nl">オランダ語</option>
+          <option value="pl">ポーランド語</option>
+          <option value="pt">ポルトガル語</option>
+          <option value="ro">ルーマニア語</option>
+          <option value="ru">ロシア語</option>
+          <option value="sk">スロバキア語</option>
+          <option value="sl">スロベニア語</option>
+          <option value="sv">スウェーデン語</option>
+          <option value="tr">トルコ語</option>
+          <option value="uk">ウクライナ語</option>
+          <option value="zh">中国語</option>
+          <!-- 翻訳先の言語オプションを追加 -->
+        </select>
+        <div class="input-group-append">
+          <%= form.button '翻訳', id: 'translateButton', class: 'btn btn-primary', type: 'button' %>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-6">
+          <%= form.text_area :text, id: 'textToTranslate', class: 'form-control', placeholder: '翻訳するテキスト', rows: 10, cols: 50 %>
+        </div>
+        <div class="col-md-6">
+          <div id="translationResult" class="form-control translation-result">
+            <%# 翻訳結果と候補を表示する部分 %>
+            <%= content_tag :div, id: 'translationTextContainer' do %>
+              <% if @translation_text.present? %>
+                <p id="translationText"><%= @translation_text %></p>
+              <% else %>
+                <p id="translationText">翻訳結果が表示されます</p>
+              <% end %>
+              <div id="alternativesContainer"></div>
+            <% end %>
+          </div>
+        </div>
+        </div>
+
+      </div>
+    </div>
+
+  <% end %>
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
