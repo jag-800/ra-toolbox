@@ -22,4 +22,4 @@ test:
 
 production:
   <<: *default
-  database: ENV['postgres://strrffjixixblk:37a4a759a64804163e63103bd769333a9352f605cf5499da52f64f8344a585b8@ec2-34-236-103-63.compute-1.amazonaws.com:5432/d8nanqld182ugo']
+  database: <%= ENV['postgres://strrffjixixblk:37a4a759a64804163e63103bd769333a9352f605cf5499da52f64f8344a585b8@ec2-34-236-103-63.compute-1.amazonaws.com:5432/d8nanqld182ugo'] %>
