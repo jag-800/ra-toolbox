@@ -22,4 +22,12 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV['postgres://strrffjixixblk:37a4a759a64804163e63103bd769333a9352f605cf5499da52f64f8344a585b8@ec2-34-236-103-63.compute-1.amazonaws.com:5432/d8nanqld182ugo'] %>
+  adapter: postgresql
+  encoding: unicode
+  database: d8nanqld182ugo
+  pool: 5
+  username: <%= ENV['strrffjixixblk'] %>
+  password: <%= ENV['37a4a759a64804163e63103bd769333a9352f605cf5499da52f64f8344a585b8'] %>
+  host: <%= ENV['ec2-34-236-103-63.compute-1.amazonaws.com'] %>
+  port: <%= ENV['5432'] %>
+  sslmode: require
