@@ -1,28 +1,8 @@
 <<<<<<< HEAD
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-=======
-# ra-toolbox
->>>>>>> 3c6b6debae887cc30f2e869d099df51e14a9c08f
+Myツール集
+・メモ帳
+・字数カウント
+・翻訳
+https://ra-toolbox-a6293635688b.herokuapp.com/
